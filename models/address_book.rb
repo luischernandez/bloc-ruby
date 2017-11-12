@@ -33,6 +33,12 @@ class AddressBook
         entries.delete(entry_to_delete)
     end
 
+    def obliterate
+        #remove all entries to have array of 0
+        @entries = []
+
+    end
+
     def import_from_csv(file_name)
         csv_text = File.read(file_name)
         csv = CSV.parse(csv_text, headers: true, skip_blanks: true)

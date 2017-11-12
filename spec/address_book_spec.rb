@@ -56,6 +56,20 @@ RSpec.describe AddressBook do
         end
     end
 
+    describe "#obliterate" do
+        it "removes all entries" do
+            name = "Ada Lovelace"
+            phone_number = "010.012.1815"
+            email = "augusta.king@lovelace.com"
+            book.add_entry(name, phone_number, email)
+
+            book.add_entry("Sammy", "999-999-8888", "sammy@blocmail.com")    
+
+            book.obliterate
+            expect(book.entries.size).to eq 0
+        end
+    end
+
     describe "#import_from_csv" do
         it "imports the correct number of entries" do
 

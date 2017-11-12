@@ -15,6 +15,7 @@ class MenuController
         puts "4 - Import entries from a CSV"
         puts "5 - Exit"
         puts "6 - View Entry Number n"
+        puts "7 - Obliterate ALL entries"
         print "Enter your selection: "
 
         selection = gets.to_i
@@ -43,6 +44,12 @@ class MenuController
             when 6
                 system "clear"
                 entry_submenu_by_number
+                main_menu
+            when 7
+                system "clear"
+                #
+                address_book.obliterate
+                puts "All entries have been obliterated!!!"
                 main_menu
             else
                 system "clear"
